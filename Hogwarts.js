@@ -1,8 +1,35 @@
 let button = document.querySelectorAll(".buttons")
-//функция рандомного числа(активно используется)
+//функция выбора рандомной свободной клетки
+
 function Bot(max) {
+  //выбираем случайный индекс
+  let RandomIndex = Math.floor(Math.random()*max)
+
+  //проверяем свободная ли клетка по адресу этого индекса
+  if (button[RandomIndex].classList.contains('buttonsX') == false && button[RandomIndex].classList.contains('buttonsO') == false) {
+    return RandomIndex;
+  }
+
+  //выбираем еще один случайный индекс
+  RandomIndex = Math.floor(Math.random()*max)
+
+  //проверяем теперь еще один случайный индекс, не занята ли эта клетка 
+  if (button[RandomIndex].classList.contains('buttonsX') == false && button[RandomIndex].classList.contains('buttonsO') == false) {
+    return RandomIndex;
+  }
+
+  //выбиарем еще один слуайный индекс Бог любит троицу хочу попить колы(надо сходить)
+  RandomIndex = Math.floor(Math.random()*max)
+
+  //проверяем наличие индекса в клетках
+  if (button[RandomIndex].classList.contains('buttonsX') == false && button[RandomIndex].classList.contains('buttonsO') == false){
+    return RandomIndex;
+  }
+
+  //бот сдается короч, и ставит куда попало)
   return Math.floor(Math.random()*max)
 }
+
 for (let buttonc of button) {
   buttonc.onclick = function(){
     //проверка наличие buttonsX
@@ -13,16 +40,84 @@ for (let buttonc of button) {
     if (this.classList.contains("buttonsO")) {
       return
     }
-    this.classList.add("buttonsX")    
+    this.classList.add("buttonsX")
     //сует туда непосредственно
     button[Bot(8)].classList.add('buttonsO')
+    checkWinner() 
+  } 
+}
+
+function checkWinner() {
+  //проверка наличии победы у Иксов
+  //проверка по горизантальным линиям
+  if (button[0].classList.contains("buttonsX")&&button[1].classList.contains("buttonsX")&&button[2].classList.contains("buttonsX")) {
+    alert("Сен жеңдің!")
+    return
   }
-    function Winner() {
-    let buttons = document.querySelectorAll(".buttons")
-    let buttonsX = document.querySelectorAll(".buttonsX")
-    if (buttons[0].classList.contains('buttonsX') && buttons[1].classList.contains('buttonsX') && buttons[2].classList.contains('buttonsX')) {
-      alert("YOu WIN!!!")
-    }
-    Winner()
+  if (button[3].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[5].classList.contains("buttonsX")) {
+    alert("Сен жеңдің!")
+    return
+  }
+  if (button[6].classList.contains("buttonsX")&&button[7].classList.contains("buttonsX")&&button[8].classList.contains("buttonsX")) {
+    alert("Сен жеңдің!")
+    return
+  }
+  //проверка по вертикальным линиям
+  if (button[0].classList.contains("buttonsX")&&button[3].classList.contains("buttonsX")&&button[6].classList.contains("buttonsX")) {
+    alert("Сен жеңдің!")
+    return 
+  }
+  if (button[1].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[7].classList.contains("buttonsX")) {
+    alert("Сен жеңдің!")
+    return 
+  }
+  if (button[2].classList.contains("buttonsX")&&button[5].classList.contains("buttonsX")&&button[8].classList.contains("buttonsX")) {
+    alert("Сен жеңдің!")
+    return 
+  }
+  //проверка по диагонали
+  if (button[0].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[8].classList.contains("buttonsX")) {
+    alert("Сен жеңдің!")
+    return 
+  }
+  if (button[2].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[6].classList.contains("buttonsX")) {
+    alert("Сен жеңдің!")
+    return 
+  }
+
+  //проверка наличии победы у ноликов
+  //проверка по горизонтальным линиям
+  if (button[0].classList.contains("buttonsO")&&button[1].classList.contains("buttonsO")&&button[2].classList.contains("buttonsO")) {
+    alert("Сен ұтылдың!")
+    return
+  }
+  if (button[3].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[5].classList.contains("buttonsO")) {
+    alert("Сен ұтылдың!")
+    return
+  }
+  if (button[6].classList.contains("buttonsO")&&button[7].classList.contains("buttonsO")&&button[8].classList.contains("buttonsO")) {
+    alert("Сен ұтылдың!")
+    return
+  }
+  if (button[0].classList.contains("buttonsO")&&button[3].classList.contains("buttonsO")&&button[6].classList.contains("buttonsO")) {
+    alert("Сен ұтылдың!")
+    return
+  }
+  if (button[1].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[7].classList.contains("buttonsO")) {
+    alert("Сен ұтылдың!")
+    return
+  }
+  if (button[2].classList.contains("buttonsO")&&button[6].classList.contains("buttonsO")&&button[8].classList.contains("buttonsO")) {
+    alert("Сен ұтылдың!")
+    return
+  }
+
+  if (button[0].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[8].classList.contains("buttonsO")) {
+    alert("Сен ұтылдың!")
+    return
+  }
+  if (button[2].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[6].classList.contains("buttonsO")) {
+    alert("Сен ұтылдың!")
+    return
   }
 }
