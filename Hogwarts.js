@@ -46,17 +46,21 @@ for (let buttonc of button) {
     checkWinner()
   } 
 }
-function playerscore() {
-  document.getElementById('bX').innerHTML = 0
+document.getElementById('bX').innerHTML = 0
+document.getElementById('bO').innerHTML = 0
+function playerscoreX() {
   playerX = document.getElementById('bX')
   playerX.innerHTML += 1  
 }
-
+function playerscoreO() {
+  playerO = document.getElementById('bO')
+  playerO.innerHTML += 1  
+}
 function checkWinner() {
   //проверка наличии победы у Иксов
   //проверка по горизантальным линиям
   if (button[0].classList.contains("buttonsX")&&button[1].classList.contains("buttonsX")&&button[2].classList.contains("buttonsX")) {
-    playerscore()
+    playerscoreX()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -64,7 +68,7 @@ function checkWinner() {
     return
   }
   if (button[3].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[5].classList.contains("buttonsX")) {
-    document.getElementById('bX').innerHTML = +1
+    playerscoreX()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -72,7 +76,7 @@ function checkWinner() {
     return
   }
   if (button[6].classList.contains("buttonsX")&&button[7].classList.contains("buttonsX")&&button[8].classList.contains("buttonsX")) {
-    document.getElementById('bX').innerHTML = +1
+    playerscoreX()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -81,7 +85,7 @@ function checkWinner() {
   }
   //проверка по вертикальным линиям
   if (button[0].classList.contains("buttonsX")&&button[3].classList.contains("buttonsX")&&button[6].classList.contains("buttonsX")) {
-    document.getElementById('bX').innerHTML = +1
+    playerscoreX()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -89,7 +93,7 @@ function checkWinner() {
     return 
   }
   if (button[1].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[7].classList.contains("buttonsX")) {
-    document.getElementById('bX').innerHTML = +1
+    playerscoreX()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -97,7 +101,7 @@ function checkWinner() {
     return 
   }
   if (button[2].classList.contains("buttonsX")&&button[5].classList.contains("buttonsX")&&button[8].classList.contains("buttonsX")) {
-    document.getElementById('bX').innerHTML = +1
+    playerscoreX()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -106,7 +110,7 @@ function checkWinner() {
   }
   //проверка по диагонали
   if (button[0].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[8].classList.contains("buttonsX")) {
-    document.getElementById('bX').innerHTML = +1
+    playerscoreX()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -114,14 +118,18 @@ function checkWinner() {
     return 
   }
   if (button[2].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[6].classList.contains("buttonsX")) {
-    alert("Сен жеңдің!")
+    playerscoreX()
+    buttoj = document.querySelectorAll('.buttons')
+    for (let butoj of buttoj) {
+      butoj.classList.remove('buttonsX', 'buttonsO')
+    }
     return 
   }
 
   //проверка наличии победы у ноликов
   //проверка по горизонтальным линиям
   if (button[0].classList.contains("buttonsO")&&button[1].classList.contains("buttonsO")&&button[2].classList.contains("buttonsO")) {
-    document.getElementById('bO').innerHTML = +1
+    playerscoreO()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -129,7 +137,7 @@ function checkWinner() {
     return
   }
   if (button[3].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[5].classList.contains("buttonsO")) {
-    document.getElementById('bO').innerHTML = +1
+    playerscoreO()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -137,7 +145,7 @@ function checkWinner() {
     return
   }
   if (button[6].classList.contains("buttonsO")&&button[7].classList.contains("buttonsO")&&button[8].classList.contains("buttonsO")) {
-    document.getElementById('bO').innerHTML = +1
+    playerscoreO()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -145,7 +153,7 @@ function checkWinner() {
     return
   }
   if (button[0].classList.contains("buttonsO")&&button[3].classList.contains("buttonsO")&&button[6].classList.contains("buttonsO")) {
-    document.getElementById('bO').innerHTML = +1
+    playerscoreO()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -153,7 +161,7 @@ function checkWinner() {
     return
   }
   if (button[1].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[7].classList.contains("buttonsO")) {
-    document.getElementById('bO').innerHTML = +1
+    playerscoreO()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -161,7 +169,7 @@ function checkWinner() {
     return
   }
   if (button[2].classList.contains("buttonsO")&&button[6].classList.contains("buttonsO")&&button[8].classList.contains("buttonsO")) {
-    document.getElementById('bO').innerHTML = +1
+    playerscoreO()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -170,7 +178,7 @@ function checkWinner() {
   }
 
   if (button[0].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[8].classList.contains("buttonsO")) {
-    document.getElementById('bO').innerHTML = +1
+    playerscoreO()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
@@ -178,11 +186,14 @@ function checkWinner() {
     return
   }
   if (button[2].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[6].classList.contains("buttonsO")) {
-    document.getElementById('bO').innerHTML = +1
+    playerscoreO()
     buttoj = document.querySelectorAll('.buttons')
     for (let butoj of buttoj) {
       butoj.classList.remove('buttonsX', 'buttonsO')
     }
     return
   }
+}
+for (var i = Things.length - 1; i >= 0; i--) {
+  Things[i]
 }
