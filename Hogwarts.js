@@ -41,9 +41,9 @@ for (let buttonc of button) {
       return
     }
     this.classList.add("buttonsX")
+    checkWinner()     
     //сует туда непосредственно
     button[Bot(8)].classList.add('buttonsO')
-    checkWinner() 
   } 
 }
 
@@ -51,33 +51,37 @@ function checkWinner() {
   //проверка наличии победы у Иксов
   //проверка по горизантальным линиям
   if (button[0].classList.contains("buttonsX")&&button[1].classList.contains("buttonsX")&&button[2].classList.contains("buttonsX")) {
-    alert("Сен жеңдің!")
+    document.getElementById('bX').innerHTML = +1
+    buttoj = document.querySelectorAll('buttons')
+    for (let butoj of buttoj) {
+      butoj.classList.remove('buttonsX')
+    }
     return
   }
   if (button[3].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[5].classList.contains("buttonsX")) {
-    alert("Сен жеңдің!")
+    document.getElementById('bX').innerHTML = +1
     return
   }
   if (button[6].classList.contains("buttonsX")&&button[7].classList.contains("buttonsX")&&button[8].classList.contains("buttonsX")) {
-    alert("Сен жеңдің!")
+    document.getElementById('bX').innerHTML = +1
     return
   }
   //проверка по вертикальным линиям
   if (button[0].classList.contains("buttonsX")&&button[3].classList.contains("buttonsX")&&button[6].classList.contains("buttonsX")) {
-    alert("Сен жеңдің!")
+    document.getElementById('bX').innerHTML = +1
     return 
   }
   if (button[1].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[7].classList.contains("buttonsX")) {
-    alert("Сен жеңдің!")
+    document.getElementById('bX').innerHTML = +1
     return 
   }
   if (button[2].classList.contains("buttonsX")&&button[5].classList.contains("buttonsX")&&button[8].classList.contains("buttonsX")) {
-    alert("Сен жеңдің!")
+    document.getElementById('bX').innerHTML = +1
     return 
   }
   //проверка по диагонали
   if (button[0].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[8].classList.contains("buttonsX")) {
-    alert("Сен жеңдің!")
+    document.getElementById('bX').innerHTML = +1
     return 
   }
   if (button[2].classList.contains("buttonsX")&&button[4].classList.contains("buttonsX")&&button[6].classList.contains("buttonsX")) {
@@ -88,36 +92,36 @@ function checkWinner() {
   //проверка наличии победы у ноликов
   //проверка по горизонтальным линиям
   if (button[0].classList.contains("buttonsO")&&button[1].classList.contains("buttonsO")&&button[2].classList.contains("buttonsO")) {
-    alert("Сен ұтылдың!")
+    document.getElementById('bX').innerHTML = +1
     return
   }
   if (button[3].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[5].classList.contains("buttonsO")) {
-    alert("Сен ұтылдың!")
+    document.getElementById('bX').innerHTML = +1
     return
   }
   if (button[6].classList.contains("buttonsO")&&button[7].classList.contains("buttonsO")&&button[8].classList.contains("buttonsO")) {
-    alert("Сен ұтылдың!")
+    document.getElementById('bX').innerHTML = +1
     return
   }
   if (button[0].classList.contains("buttonsO")&&button[3].classList.contains("buttonsO")&&button[6].classList.contains("buttonsO")) {
-    alert("Сен ұтылдың!")
+    document.getElementById('bX').innerHTML = +1
     return
   }
   if (button[1].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[7].classList.contains("buttonsO")) {
-    alert("Сен ұтылдың!")
+    document.getElementById('bX').innerHTML = +1
     return
   }
   if (button[2].classList.contains("buttonsO")&&button[6].classList.contains("buttonsO")&&button[8].classList.contains("buttonsO")) {
-    alert("Сен ұтылдың!")
+    document.getElementById('bX').innerHTML = +1
     return
   }
 
   if (button[0].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[8].classList.contains("buttonsO")) {
-    alert("Сен ұтылдың!")
+    document.getElementById('bX').innerHTML = +1
     return
   }
   if (button[2].classList.contains("buttonsO")&&button[4].classList.contains("buttonsO")&&button[6].classList.contains("buttonsO")) {
-    alert("Сен ұтылдың!")
+    document.getElementById('bX').innerHTML = +1
     return
   }
 }
