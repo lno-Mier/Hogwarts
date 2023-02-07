@@ -49,12 +49,7 @@ for (let buttonc of button) {
 nopointX = document.getElementById('bX').innerHTML = Math.floor(0)
 nopointO = document.getElementById('bO').innerHTML = 0
 function playerscoreX() {
-  if (nopointX = 0){
-    document.querySelector(".counter_unit").innerHTML = Math.round(+1)
-  }
-  else{
-    document.querySelector(".counter_unit").innerHTML = Math.round(+1)
-  }
+  document.getElementById('bX').innerHTML += 1
 }
 function playerscoreO() {
   playerO = document.getElementById('bO')
