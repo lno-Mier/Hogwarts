@@ -46,15 +46,19 @@ for (let buttonc of button) {
     checkWinner()
   } 
 }
-document.getElementById('bX').innerHTML = 0
-document.getElementById('bO').innerHTML = 0
+nopointX = document.getElementById('bX').innerHTML = Math.floor(0)
+nopointO = document.getElementById('bO').innerHTML = 0
 function playerscoreX() {
-  playerX = document.getElementById('bX')
-  playerX.innerHTML += 1  
+  if (nopointX = 0){
+    document.querySelector(".counter_unit").innerHTML = Math.round(+1)
+  }
+  else{
+    document.querySelector(".counter_unit").innerHTML = Math.round(+1)
+  }
 }
 function playerscoreO() {
   playerO = document.getElementById('bO')
-  playerO.innerHTML += 1  
+  playerO.innerHTML += 1 
 }
 function checkWinner() {
   //проверка наличии победы у Иксов
@@ -193,7 +197,4 @@ function checkWinner() {
     }
     return
   }
-}
-for (var i = Things.length - 1; i >= 0; i--) {
-  Things[i]
 }
