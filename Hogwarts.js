@@ -49,11 +49,10 @@ for (let buttonc of button) {
 nopointX = document.getElementById('bX').innerHTML = Math.floor(0)
 nopointO = document.getElementById('bO').innerHTML = 0
 function playerscoreX() {
-  document.getElementById('bX').innerHTML = document.getElementById('bX').innerHTML + 1
+  document.getElementById('bX').innerHTML = parseInt(+document.getElementById('bX').innerHTML + 1)
 }
 function playerscoreO() {
-  playerO = document.getElementById('bO')
-  playerO.innerHTML += 1 
+  document.getElementById('bO').innerHTML = parseInt(+document.getElementById('bO').innerHTML + 1)
 }
 function checkWinner() {
   //проверка наличии победы у Иксов
