@@ -2,38 +2,58 @@ let button = document.querySelectorAll(".buttons")
 //функция выбора рандомной свободной клетки
 
 function Bot() {
-  let buts = document.querySelectorAll('buttons')
-  for (let but of buts) {
-    if (this.classList.contains("buttonsX")) {
+  if (button[0].classList.contains("buttonsX") == true) {
+    if (button[1].classList.contains("buttonsX") == true && button[1].classList.contains("buttonsO") == true) {
       return
     }
-  }
-  
-  if (button[0].classList.contains("buttonsX") == true) {
     button[1].classList.add("buttonsO")
   }
   if (button[1].classList.contains("buttonsX") == true) {
+    if (button[3].classList.contains("buttonsX") == true && button[3].classList.contains("buttonsO") == true) {
+      return
+    }
     button[3].classList.add("buttonsO")
   }
   if (button[2].classList.contains("buttonsX") == true) {
+    if (button[1].classList.contains("buttonsX") == true && button[1].classList.contains("buttonsO") == true) {
+      return
+    }
     button[1].classList.add("buttonsO")
   }
   if (button[3].classList.contains("buttonsX") == true) {
+    if (button[0].classList.contains("buttonsX") == true && button[0].classList.contains("buttonsO") == true) {
+      return
+    }
     button[0].classList.add("buttonsO")
   }
   if (button[4].classList.contains("buttonsX") == true) {
+    if (button[8].classList.contains("buttonsX") == true && button[8].classList.contains("buttonsO") == true) {
+      return
+    }
     button[8].classList.add("buttonsO")
   }
   if (button[5].classList.contains("buttonsX") == true) {
+    if (button[2].classList.contains("buttonsX") == true && button[2].classList.contains("buttonsO") == true) {
+      return
+    }
     button[2].classList.add("buttonsO")
   }
   if (button[6].classList.contains("buttonsX") == true) {
+    if (button[7].classList.contains("buttonsX") == true && button[7].classList.contains("buttonsO") == true) {
+      return
+    }
     button[7].classList.add("buttonsO")
   }
   if (button[7].classList.contains("buttonsX") == true) {
+    if (button[6].classList.contains("buttonsX") == true && button[6].classList.contains("buttonsO") == true) {
+      return
+    }
     button[6].classList.add("buttonsO")
   }
   if (button[8].classList.contains("buttonsX") == true) {
+    if (button[5].classList.contains("buttonsX") == true && button[5].classList.contains("buttonsO") == true) {
+      return
+    }
     button[5].classList.add("buttonsO")
   }
 }
@@ -51,8 +71,7 @@ for (let buttonc of button) {
     this.classList.add("buttonsX")
      checkWinner()
     //сует туда непосредственно
-    button[Bot()].classList.add('buttonsO')
-    
+    Bot()
   } 
 }
 nopointX = document.getElementById('bX').innerHTML = Math.floor(0)
