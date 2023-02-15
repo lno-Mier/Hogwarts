@@ -2,6 +2,13 @@ let button = document.querySelectorAll(".buttons")
 //функция выбора рандомной свободной клетки
 
 function Bot() {
+  let buts = document.querySelectorAll('buttons')
+  for (let but of buts) {
+    if (this.classList.contains("buttonsX")) {
+      return
+    }
+  }
+  
   if (button[0].classList.contains("buttonsX") == true) {
     button[1].classList.add("buttonsO")
   }
