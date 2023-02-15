@@ -1,33 +1,34 @@
 let button = document.querySelectorAll(".buttons")
 //функция выбора рандомной свободной клетки
 
-function Bot(max) {
-  //выбираем случайный индекс
-  let RandomIndex = Math.floor(Math.random()*max)
-
-  //проверяем свободная ли клетка по адресу этого индекса
-  if (button[RandomIndex].classList.contains('buttonsX') == false && button[RandomIndex].classList.contains('buttonsO') == false) {
-    return RandomIndex;
+function Bot() {
+  if (button[0].classList.contains("buttonsX") == true) {
+    button[1].classList.add("buttonsO")
   }
-
-  //выбираем еще один случайный индекс
-  RandomIndex = Math.floor(Math.random()*max)
-
-  //проверяем теперь еще один случайный индекс, не занята ли эта клетка 
-  if (button[RandomIndex].classList.contains('buttonsX') == false && button[RandomIndex].classList.contains('buttonsO') == false) {
-    return RandomIndex;
+  if (button[1].classList.contains("buttonsX") == true) {
+    button[3].classList.add("buttonsO")
   }
-
-  //выбиарем еще один слуайный индекс Бог любит троицу хочу попить колы(надо сходить)
-  RandomIndex = Math.floor(Math.random()*max)
-
-  //проверяем наличие индекса в клетках
-  if (button[RandomIndex].classList.contains('buttonsX') == false && button[RandomIndex].classList.contains('buttonsO') == false){
-    return RandomIndex;
+  if (button[2].classList.contains("buttonsX") == true) {
+    button[1].classList.add("buttonsO")
   }
-
-  //бот сдается короч, и ставит куда попало)
-  return Math.floor(Math.random()*max)
+  if (button[3].classList.contains("buttonsX") == true) {
+    button[0].classList.add("buttonsO")
+  }
+  if (button[4].classList.contains("buttonsX") == true) {
+    button[8].classList.add("buttonsO")
+  }
+  if (button[5].classList.contains("buttonsX") == true) {
+    button[2].classList.add("buttonsO")
+  }
+  if (button[6].classList.contains("buttonsX") == true) {
+    button[7].classList.add("buttonsO")
+  }
+  if (button[7].classList.contains("buttonsX") == true) {
+    button[6].classList.add("buttonsO")
+  }
+  if (button[8].classList.contains("buttonsX") == true) {
+    button[5].classList.add("buttonsO")
+  }
 }
 
 for (let buttonc of button) {
@@ -41,9 +42,10 @@ for (let buttonc of button) {
       return
     }
     this.classList.add("buttonsX")
+     checkWinner()
     //сует туда непосредственно
-    button[Bot(8)].classList.add('buttonsO')
-    checkWinner()
+    button[Bot()].classList.add('buttonsO')
+    
   } 
 }
 nopointX = document.getElementById('bX').innerHTML = Math.floor(0)
